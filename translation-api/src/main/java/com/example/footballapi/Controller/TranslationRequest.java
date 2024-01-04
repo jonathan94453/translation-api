@@ -1,4 +1,4 @@
-package com.example.translationapi.Controller;
+package com.example.footballapi.Controller;
 
 public class TranslationRequest {
     private String text; 
