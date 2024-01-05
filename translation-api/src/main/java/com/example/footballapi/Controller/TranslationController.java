@@ -14,7 +14,7 @@ public class TranslationController {
     public String rootEndpoint() {
         return "Welcome to the root endpoint";
     }
-
+public main void
 
 
 @PostMapping("/translate") 
