@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 public class TranslationController {
-    // mvn spring-boot:run -f "C:\Jonathan\translation-api\translation-api\pom.xml"
+    // mvn spring-boot:run -f "C:\Jonathan94453\translation-api\translation-api\pom.xml"
     @GetMapping("/")
     public String rootEndpoint() {
         return "Welcome to the root endpoint";
     }
-public main void
+
 
 
 @PostMapping("/translate") 
