@@ -1,11 +1,11 @@
-package com.example.footballapi.Controller;
+
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan; 
 
 @SpringBootApplication
-@ComponentScan(basePackages = "com.example.translationapi.Controller")
+@ComponentScan(basePackages = "com.example.footballapi.Controller")
 public class TranslationApiApplication {
 
 	public static void main(String[] args) {
