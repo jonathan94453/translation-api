@@ -5,6 +5,17 @@ public class Player {
     private String Name; 
     private String team; 
 
+
+
+public Player(String Name, String team, int age) {
+    this.Name = Name; 
+    this.team = team; 
+    this.age = age; 
+} 
+
+
+
+
 public int getAge() {
     return age; 
 } 
