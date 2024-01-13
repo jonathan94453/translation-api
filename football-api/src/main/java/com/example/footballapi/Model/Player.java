@@ -1,23 +1,26 @@
-package main.java.com.example.footballapi.Model;
+package com.example.footballapi.Model;
 
 public class Player {
-    private int age; 
+    private String birthdate; 
     private String Name; 
     private String team; 
+    private String height; 
+    private String position; 
 
 
-
-public Player(String Name, String team, int age) {
+public Player(String Name, String team, String birthdate, String height, String position) {
     this.Name = Name; 
     this.team = team; 
-    this.age = age; 
+    this.birthdate = birthdate; 
+    this.height = height; 
+    this.position = position; 
 } 
 
 
 
 
-public int getAge() {
-    return age; 
+public String getbirthdate() {
+    return birthdate; 
 } 
 
 public String getName() {
@@ -28,6 +31,13 @@ public String getTeam() {
     return team; 
 }
 
+public String getHeight() {
+    return height; 
+} 
+
+public String getPosition() {
+    return position; 
+}
 
 
 

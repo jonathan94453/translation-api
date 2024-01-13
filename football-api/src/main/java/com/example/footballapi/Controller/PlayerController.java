@@ -1,15 +1,15 @@
 package com.example.footballapi.Controller;
 
-import main.java.com.example.footballapi.Model.Player;
-import main.java.com.example.footballapi.Storage.PlayerDataStorage; 
+import com.example.footballapi.Model.Player;
+import com.example.footballapi.Storage.PlayerDataStorage; 
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
-import java.util.ArrayList; 
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map; 
 
      
 
@@ -28,11 +28,15 @@ public ArrayList<Player> getPlayerDatabase() {
 
 
 
-// @GetMapping("api/player/{playerName}") 
-// public String getPlayerInformation(@PathVariable String playerName) {
-//   PlayerDataStorage getplayerinfo = new PlayerDataStorage(); 
-//   return getplayerinfo.getInfobyPlayerName(playerName); 
-// }
+@GetMapping("api/player/Playerteam/{playerName}") 
+public Map<String, String>  getPlayerInformation(@PathVariable String playerName) {
+  PlayerDataStorage getplayerinfo = new PlayerDataStorage(); 
+ String team = getplayerinfo.getPlayerTeam(playerName);
+
+    Map<String, String> response = new HashMap<>();
+    response.put("team", team);
+
+    return response;
 
 }
-         
+} 
