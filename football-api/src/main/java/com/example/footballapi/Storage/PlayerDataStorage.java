@@ -47,7 +47,7 @@ public class PlayerDataStorage {
 
 
 
-
+// return height; 
 public String getPlayerTeam(String target) {
 
 ArrayList<Player> playerlist = getPlayerDataset(); 
@@ -66,134 +66,68 @@ if(targetTeam.isEmpty()) {
 
 return targetTeam; 
 
-
-}
-
-public String getPlayerBirthdate(String target) {
-
-    ArrayList<Player> playerlist = getPlayerDataset(); 
-    String targetBirthdate = ""; 
-    for(int i = 0; i < playerlist.size(); i++) {
-        Player currentPlayer = playerlist.get(i);  
-        if(currentPlayer.getName().equals(target)) {
-           targetBirthdate = currentPlayer.getbirthdate(); 
-            break;  
-        }
-    }
-    
-    if(targetBirthdate.isEmpty()) {
-        return "did not find"; 
-    }
-    
-    return targetBirthdate; 
-    
-    
-    }
-
-    
-    public String getPlayerTeam(String target) {
-
-        ArrayList<Player> playerlist = getPlayerDataset(); 
-        String targetTeam = ""; 
-        for(int i = 0; i < playerlist.size(); i++) {
-            Player currentPlayer = playerlist.get(i);  
-            System.out.println("Comparing: " + currentPlayer.getName() + " with " + target);
-            if(currentPlayer.getName().equals(target)) {
-               targetTeam = currentPlayer.getTeam(); 
-                break;  
-            }
-        }
-        
-        if(targetTeam.isEmpty()) {
-            return "did not find"; 
-        }
-        
-        return targetTeam; 
-        
-        
-        }
-
-        
+} 
 
 
-
-        public String getPlayerTeam(String target) {
-
-            ArrayList<Player> playerlist = getPlayerDataset(); 
-            String targetTeam = ""; 
-            for(int i = 0; i < playerlist.size(); i++) {
-                Player currentPlayer = playerlist.get(i);  
-                System.out.println("Comparing: " + currentPlayer.getName() + " with " + target);
-                if(currentPlayer.getName().equals(target)) {
-                   targetTeam = currentPlayer.getTeam(); 
-                    break;  
-                }
-            }
-            
-            if(targetTeam.isEmpty()) {
-                return "did not find"; 
-            }
-            
-            return targetTeam; 
-            
-            
-            }
-
-            
-
-
-
-            public String getPlayerTeam(String target) {
+// Get player birthdate
+            public String getPlayerBirthdate(String target) {
 
                 ArrayList<Player> playerlist = getPlayerDataset(); 
-                String targetTeam = ""; 
+                String targetBirthdate = ""; 
                 for(int i = 0; i < playerlist.size(); i++) {
                     Player currentPlayer = playerlist.get(i);  
-                    System.out.println("Comparing: " + currentPlayer.getName() + " with " + target);
                     if(currentPlayer.getName().equals(target)) {
-                       targetTeam = currentPlayer.getTeam(); 
+                       targetBirthdate= currentPlayer.getbirthdate(); 
                         break;  
                     }
                 }
                 
-                if(targetTeam.isEmpty()) {
+                if(targetBirthdate.isEmpty()) {
                     return "did not find"; 
                 }
                 
-                return targetTeam; 
+                return targetBirthdate; 
                 
                 
                 }
 
-                
+// Get Player Height
+public String getPlayerHeight(String target) {
+    ArrayList<Player> playerlist = getPlayerDataset(); 
+String playerheight = "";
+for(int i = 0; i < playerlist.size();) {
+    Player current  = playerlist.get(i);
+    System.out.println("Comparing" + playerlist.get(i) + "with" + target);
+    if(current.getName().equals(target)) {
+        playerheight = current.getHeight();
+        break; 
+    }
+    else {
+        return "Error: Did not find"; 
+    }
+}
 
+return playerheight; 
 
+}
 
-                public String getPlayerTeam(String target) {
+// Get Player Position 
 
-                    ArrayList<Player> playerlist = getPlayerDataset(); 
-                    String targetTeam = ""; 
-                    for(int i = 0; i < playerlist.size(); i++) {
-                        Player currentPlayer = playerlist.get(i);  
-                        System.out.println("Comparing: " + currentPlayer.getName() + " with " + target);
-                        if(currentPlayer.getName().equals(target)) {
-                           targetTeam = currentPlayer.getTeam(); 
-                            break;  
-                        }
-                    }
-                    
-                    if(targetTeam.isEmpty()) {
-                        return "did not find"; 
-                    }
-                    
-                    return targetTeam; 
-                    
-                    
-                    }
-                    
-
-
-
+public String getPlayerPosition(String target) {
+    ArrayList<Player> playerlist = getPlayerDataset(); 
+    String playerposition = ""; 
+    for(int i = 0; i < playerlist.size();) {
+        Player index = playerlist.get(i); 
+        if(index.getName().equals(target)) {
+            playerposition = index.getPosition(); 
+            break;
+        } 
+        else {
+            return "did not find"; 
+        }
+    }
+    return playerposition; 
+}
 
 
 

@@ -16,27 +16,60 @@ import java.util.Map;
 @RestController
 public class PlayerController {
  
+private PlayerDataStorage getstorageobject() {
+  PlayerDataStorage getplayerinfo = new PlayerDataStorage(); 
+  return getplayerinfo; 
+}
 
-
-@GetMapping("/api/player/allplayers")
+@GetMapping("player/allplayers")
 public ArrayList<Player> getPlayerDatabase() {
-  PlayerDataStorage playerdatastorage = new PlayerDataStorage(); 
-    return playerdatastorage.getPlayerDataset(); 
+ 
+    return getstorageobject().getPlayerDataset(); 
 }
 
 
 
 
 
-@GetMapping("api/player/Playerteam/{playerName}") 
-public Map<String, String>  getPlayerInformation(@PathVariable String playerName) {
-  PlayerDataStorage getplayerinfo = new PlayerDataStorage(); 
- String team = getplayerinfo.getPlayerTeam(playerName);
+@GetMapping("player/Playerteam/{playerName}") 
+public Map<String, String>  getPlayerTeam(@PathVariable String playerName) {
+String team = getstorageobject().getPlayerTeam(playerName); 
 
     Map<String, String> response = new HashMap<>();
     response.put("team", team);
 
     return response;
 
+} 
+
+@GetMapping("player/PlayerBirthdate/{playerName}") 
+public Map<String, String> sendbirthdate(@PathVariable String playerName) {
+  String birthdate = getstorageobject().getPlayerBirthdate(playerName); 
+  Map<String, String> response = new HashMap<>(); 
+response.put("Birthdate", birthdate); 
+
+
+  return response; 
 }
+
+@GetMapping("player/PlayerHeight/{playerName}") 
+public Map<String, String> sendHeight(@PathVariable String playerName) {
+  String height = getstorageobject().getPlayerHeight(playerName); 
+  Map<String, String> jsonresponse = new HashMap<>(); 
+  jsonresponse.put("Height", height); 
+  return jsonresponse; 
+}
+
+
+@GetMapping("player/PlayerPosition/{playerName}") 
+public Map<String, String> sendpos(@PathVariable String playerName) {
+  String pos = getstorageobject().getPlayerPosition(playerName); 
+  Map<String, String> jsonresponse = new HashMap<>(); 
+  jsonresponse.put("Position", pos); 
+  return jsonresponse; 
+}
+
+
+
+
 } 
