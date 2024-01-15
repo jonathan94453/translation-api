@@ -95,16 +95,15 @@ return targetTeam;
 public String getPlayerHeight(String target) {
     ArrayList<Player> playerlist = getPlayerDataset(); 
 String playerheight = "";
-for(int i = 0; i < playerlist.size();) {
+for(int i = 0; i < playerlist.size(); i++) {
     Player current  = playerlist.get(i);
-    System.out.println("Comparing" + playerlist.get(i) + "with" + target);
     if(current.getName().equals(target)) {
         playerheight = current.getHeight();
         break; 
     }
-    else {
-        return "Error: Did not find"; 
-    }
+}
+if(playerheight.isEmpty()) {
+    return "Error: Did not find"; 
 }
 
 return playerheight; 
@@ -116,15 +115,17 @@ return playerheight;
 public String getPlayerPosition(String target) {
     ArrayList<Player> playerlist = getPlayerDataset(); 
     String playerposition = ""; 
-    for(int i = 0; i < playerlist.size();) {
+    for(int i = 0; i < playerlist.size(); i++) {
         Player index = playerlist.get(i); 
         if(index.getName().equals(target)) {
             playerposition = index.getPosition(); 
             break;
         } 
-        else {
-            return "did not find"; 
-        }
+       
+    } 
+
+    if(playerposition.isEmpty()) {
+        return "Error did not find"; 
     }
     return playerposition; 
 }
@@ -133,4 +134,7 @@ public String getPlayerPosition(String target) {
 
 
 
-}
+} 
+
+
+
